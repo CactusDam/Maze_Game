@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87399201-283A-40EC-9349-9B942BC6A526}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>finalgame</RootNamespace>
+    <AssemblyName>finalgame</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Character.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="FIGHTSCREEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FIGHTSCREEN.Designer.cs">
+      <DependentUpon>FIGHTSCREEN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapMaker.cs" />
+    <Compile Include="MAPWINDOW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAPWINDOW.Designer.cs">
+      <DependentUpon>MAPWINDOW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FIGHTSCREEN.resx">
+      <DependentUpon>FIGHTSCREEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAPWINDOW.resx">
+      <DependentUpon>MAPWINDOW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\annoyingdog.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room1,1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room1,2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room1,3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room2,1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room2,2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room2,3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room3,1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room3,2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room3,3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Alien01.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fightscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE DOWN 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE DOWN 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE UP 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE UP 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC MOVE DOWN 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC MOVE DOWN 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC MOVE UP 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC MOVE UP 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC SIDE MOVE 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC SIDE MOVE 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC SIDE MOVE 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BACKGROUND 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BACKGROUND 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BACKGROUND 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue Gem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chest Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chest Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold Bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gold Coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green Gem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red Gem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barrel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Battle Idel 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Battle Idel 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Death 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Death 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Death 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Death 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Death 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idel Left 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idel Left 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idle 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idle 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idle Down 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idle Down 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idle Up 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Idle Up 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Down 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Down 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Left 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Left 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Left 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Right 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Right 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Right 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Up 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Move Up 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemy Victory Pose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC ATTACK 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC DEATH 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC DEATH 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC DEATH 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC DEATH 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC DEATH 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE LEFT 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE LEFT 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE WEAPON 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC IDLE WEAPON 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC SIDE LEFT 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC SIDE LEFT 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC SIDE LEFT 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MC VICTORY POSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dodge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade In 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade In 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade In 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade Out 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade Out 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Select Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade In 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade In 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade Out 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade Out 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade Out 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fade Out 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Life Bar 14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loot Box.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
